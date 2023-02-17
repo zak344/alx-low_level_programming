@@ -4,10 +4,11 @@
  *
  *
  * main - print out the alphbet 
- *  Return: 0
+ * Return: 0
+ *
  */ 
 
-int main()
+int main(void)
 {
 	int c;
 
