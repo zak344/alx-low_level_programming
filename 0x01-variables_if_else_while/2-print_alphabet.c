@@ -1,13 +1,8 @@
 #include <stdio.h>
-
 /**
- *
- *
  * main - print out the alphbet 
  * Return: 0
- *
  */ 
-
 int main(void)
 {
 	int c;
