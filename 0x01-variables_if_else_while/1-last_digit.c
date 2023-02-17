@@ -7,6 +7,8 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
+	/* if the last digit of n is greater i will display its greater than five
+	 * if zero it displays zero*/
 	int n;
 
 	srand(time(0));
