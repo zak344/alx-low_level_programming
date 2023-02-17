@@ -5,7 +5,7 @@
 /**
  * main - generate random number, show if positive or negative
  *
- * Return; Always 0
+ * Return: Always 0
  */
 
 int main(void)
