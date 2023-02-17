@@ -3,9 +3,11 @@
 #include <stdio.h>
 
 /**
- * more headers goes there
- *betty style doc for function main goes there
- **/
+ * main - find a rand numbers and show the last digit
+ *
+ * Return: 0
+ */
+
 int main(void)
 {
 	
