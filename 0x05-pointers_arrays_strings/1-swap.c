@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- *main - check the code
- *
- *
- *function swap_int will swap: a's value to b and b's: value to a
+ * swap_int - swap arg a with arg b
+ * @a: arg to be swapped
+ * @b: arg to be swapped
  */
+
 void swap_int(int *a, int *b)
 {
 	int temp;
