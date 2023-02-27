@@ -11,7 +11,7 @@ void swap_int(int *a, int *b)
 {
 
 	printf("*a=%d, *b=%d\n", *a, *b);
-	int temp = *a;
+	int *temp = *a;
 	*a = *b;
 	*b = temp;
 	printf("*a=%d, *b=%d\n", *a, *b);
