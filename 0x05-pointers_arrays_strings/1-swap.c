@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * main - check the code
+ *main - check the code
  *
  *
- * swap_int will swap a's value to b and b's value to a
+ *function swap_int will swap: a's value to b and b's: value to a
  */
 void swap_int(int *a, int *b)
 {
