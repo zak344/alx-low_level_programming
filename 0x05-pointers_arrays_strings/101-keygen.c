@@ -1,35 +1,48 @@
-#include <stdio.h> 
+#include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
-
-int main()
+#include <time.h>
+/**
+ * checksum - executes checksum
+ * @s: input char
+ * Return: checksum
+ */
+unsigned long checksum(char *s)
 {
-    char a[10],c[10],d;
-    int i,j,k=0;
-    printf("#Keygen by b44nz0r\n\n");
-    
-    while (k <5 || k >=10)
-    {
-          if (k !=0)
-             printf("\nThe username length should be 5 to 10 alphabets\n");
-        
-         printf("enter username: ");
-         scanf("%s",a);
-         k = strlen(a);
-    }
-    
-    i = k-1;
-    j = 0;
-    
-    while (i >= 0)
-    {
-          c[j] = a[i]+i;
-          i--;
-          j++;
-    }
-    
-    c[j] = 0;
-    printf("\nThe password is %s\n",c);
-    printf("\nHit Enter to Exit\n");
-    getchar();
-    getchar();
-} 
+unsigned long sum = 0;
+while (*s != 0)
+{
+	sum += *s;
+	s++;
+}
+return (sum);
+}
+/**
+ * main - prints password for crakme
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQSTUVWXYZ";
+	char s[33];
+	unsigned long sum;
+	int i, flag = 0;
+
+	srand(time(NULL));
+	while (flag == 0)
+	{
+		for (i = 0; i < 33; i++)
+		{
+			s[i] = alpha[rand() % (sizeof(alpha) - 1)];
+		}
+		s[i] = '\0';
+		sum = checksum(s);
+		if (sum == 2772)
+		{
+			flag = 1;
+			printf("%s", s);
+		}
+	}
+return (0);
+}
