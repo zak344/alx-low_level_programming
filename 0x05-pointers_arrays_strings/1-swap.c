@@ -5,7 +5,7 @@
  * main - check the code
  *
  *
- * swap
+ * swap_int will swap a's value to b and b's value to a
  */
 void swap_int(int *a, int *b)
 {
