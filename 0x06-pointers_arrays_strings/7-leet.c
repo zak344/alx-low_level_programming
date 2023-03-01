@@ -1,30 +1,28 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * leet - turn aeotl into 43071 respectively
- * @s: string to replace from
- *
- * Description: Don't hate the hacker, hate the code :)
- *
- * Return: Pointer to changed string
- */
+  * leet - encodes a string into 1337
+  * @n: striing
+  * Return: string encoded
+ **/
 
-char *leet(char *s)
+char *leet(char *n)
 {
-	char *temp;
+	int j, i = 0;
+	char x[] = "aAeEoOtTlL";
+	char y[] = "43071";
 
-	temp  = s;
-
-	while (*s)
+	while (n[i] != '\0')
 	{
-		(*s == 'a' || *s == 'A') ? *s = '4' : 0;
-		(*s == 'e' || *s == 'E') ? *s = '3' : 0;
-		(*s == 'o' || *s == 'O') ? *s = '0' : 0;
-		(*s == 't' || *s == 'T') ? *s = '7' : 0;
-		if (*s == 'l' || *s == 'L')
-			(*s) = '1';
-		s++;
+	for (j = 0; j < 10; j++)
+	{
+	if (n[i] == x[j])
+	{
+	n[i] = y[j / 2];
+	}
+	}
+	i++;
 	}
 
-	return (temp);
+return (n);
 }
