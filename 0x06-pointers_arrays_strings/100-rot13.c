@@ -24,7 +24,5 @@ char *rot13(char *n)
 		}
 	i++;
 	}
-return (n);
+	return (n);
 }
-Footer
-© 2023 GitHub, Inc.
