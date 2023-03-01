@@ -1,40 +1,30 @@
 #include "main.h"
 
 /**
- * _ischar - returns if letter
- * @c: char to check
- *
- * Return: 1 if letter, else 0
- */
-
-int _ischar(char c)
+  * rot13 - encodes a string into rot13
+  * @n: string
+  * Return: string encoded
+ **/
+char *rot13(char *n)
 {
-	int flag;
+	int j, aux = 0, i = 0;
+	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	flag = 0;
-	((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) ? flag = 1 : 0;
-	return (flag);
-}
-
-
-/**
- * rot13 - encode a string with rot13
- * @s: string to encode
- *
- * Return: pointer to string
- */
-
-char *rot13(char *s)
-{
-	char *tmp;
-
-	tmp = s;
-	do {
-		if (_ischar(*s))
+	while (n[i] != '\0')
+	{
+	aux = 0;
+		for (j = 0; (j < 52) && aux == 0; j++)
 		{
-			((*s >= 'a' && *s <= 'm') ||
-			(*s >= 'A' && *s <= 'M')) ? (*s = *s + 13) : (*s = *s - 13);
+		if ((n[i] == in[j]) && aux == 0)
+			{
+			n[i] = out[j];
+			aux = 1;
+			}
 		}
-	} while (*s++);
-	return (tmp);
+	i++;
+	}
+return (n);
 }
+Footer
+© 2023 GitHub, Inc.
