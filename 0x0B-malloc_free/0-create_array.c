@@ -1,28 +1,32 @@
-nclude "main.h"
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * create_array - Entry point
- *@size: size of the array
- *@c: character
- * Return: a pointer to the array, or NULL if it fails
+ * create_array - create array of size size and assign char c
+ * @size: size of array
+ * @c: char to assign
+ * Description: creat array of size size and assign char c
+ * Return: pointer to array, NULL if fail
+ *
  */
+
 char *create_array(unsigned int size, char c)
 {
-	char *array = NULL;
+
+	char *str;
+
 	unsigned int i;
 
-	if (size == 0)
+
+
+	str = malloc(sizeof(char) * size);
+
+	if (size == 0 || str == NULL)
 		return (NULL);
-	if (size != 0)
-	{
-		array = (char *)malloc(size * sizeof(char));
-		if (array != NULL)
-		{
-			for (i = 0; i < size; i++)
-				array[i] = c;
-		}
-	}
-	return (array);
+
+	for (i = 0; i < size; i++)
+		str[i] = c;
+
+	return (str);
+
 }
