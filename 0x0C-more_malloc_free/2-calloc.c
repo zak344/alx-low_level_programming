@@ -1,29 +1,27 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _calloc - Allocate memory and initalize space to zero
- * @nmemb: number of elements
- * @size: size of bytes
- *
- * Return: pointer to memory space, or NULL
- */
+* _calloc - prints calloc;
+* @nmemb: input string.
+* @size: input string.
+* Return: Pointer.
+*/
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *space;
-	int *memset;
-	unsigned int i;
+	char *p;
+	unsigned int i, d;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	space = malloc(nmemb * size);
-	if (space == NULL)
+	d = nmemb * size;
+	if (nmemb <= 0 || size <= 0)
 		return (NULL);
 
-	memset = space;
-	for (i = 0 ; i < nmemb; i++)
+	p = malloc(d);
+	if (p == NULL)
+		return (NULL);
+
+	for (i = 0; i < (d); i++)
 	{
-		*(memset + (i * size)) = 0;
+		p[i] = 0;
 	}
-
-	return (space);
+	return (p);
 }
